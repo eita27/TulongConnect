@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TulongConnect Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="page">
+    <div class="top-links">
+      <a class="chip active" href="./index.html">Prototype</a>
+      <a class="chip" href="./about.html">About</a>
+    </div>
+
+    <div class="title">
+      <h1><span class="brand">TulongConnect</span> Interactive Prototype</h1>
+      <p>Role-based donor and NGO flow (sign-in required)</p>
+    </div>
+
+    <section class="stage">
+      <div class="phone">
+        <div class="screen-wrap">
+          <div class="status"><span>9:41</span><span>5G • 89%</span></div>
+
+          <section class="screen active" id="login">
+            <div class="header">
+              <div class="logo">K</div>
+              <h2 class="h2">Welcome to <span class="brand">TulongConnect</span></h2>
+              <p class="sub">Helping communities through meaningful donations.</p>
+            </div>
+            <div class="input"><label>NAME</label><div class="field"><input class="field-input" type="text" placeholder="Enter your name" /></div></div>
+            <div class="input"><label>EMAIL</label><div class="field"><input class="field-input" type="email" placeholder="your@email.com" /></div></div>
+            <div class="input"><label>PASSWORD</label><div class="field"><input class="field-input" type="password" placeholder="Enter password" /></div></div>
+            <a class="toggle-row role-toggle active-role" data-role="donor"><span style="font-size:12px;font-weight:600">I am a Donor</span><span class="switch"></span></a>
+            <a class="toggle-row role-toggle" data-role="ngo"><span style="font-size:12px;font-weight:600">I am an NGO</span><span class="switch"></span></a>
+            <p class="role-note" id="role-note">Selected role: Donor</p>
+            <a class="btn btn-green" id="login-submit">Log In</a>
+            <a class="btn btn-yellow nav" data-to="signup">Sign Up</a>
+            <p class="role-note">Sign in first to access dashboards, tracking, inventory, and profile pages.</p>
+          </section>
+
+          <section class="screen" id="signup">
+            <div class="header">
+              <div class="logo">+</div>
+              <h2 class="h2">Create Account</h2>
+              <p class="sub">Join as donor or NGO partner.</p>
+            </div>
+            <div class="input"><label>ORGANIZATION / FULL NAME</label><div class="field"><input class="field-input" type="text" placeholder="Enter details" /></div></div>
+            <div class="input"><label>EMAIL</label><div class="field"><input class="field-input" type="email" placeholder="name@email.com" /></div></div>
+            <div class="input"><label>PASSWORD</label><div class="field"><input class="field-input" type="password" placeholder="Create a password" /></div></div>
+            <a class="btn btn-green" id="create-donor-account">Create as Donor</a>
+            <a class="btn btn-yellow" id="create-ngo-account">Create as NGO</a>
+            <a class="btn btn-pink nav" data-to="login">Back to Login</a>
+          </section>
+
+          <section class="screen" id="donor-dashboard">
+            <div class="top-nav">
+              <div><div class="subname">Welcome back, donor</div><div class="name">TulongConnect</div></div>
+              <a class="icon nav" data-to="donation-history">📜</a>
+            </div>
+            <div class="search">🔎 <input class="field-input" type="search" placeholder="Search NGOs or campaigns" /></div>
+            <div class="card">
+              <div class="row-between"><h3 class="ngo-title">Hope Harbor Foundation</h3><span class="badge">Urgent</span></div>
+              <p class="desc">Needs Food Packs and Hygiene Kits.</p>
+              <div class="row-between"><span class="desc">Need: Food + Hygiene</span><a class="mini-btn nav" data-to="donation-builder">Donate</a></div>
+            </div>
+            <div class="card">
+              <div class="row-between"><h3 class="ngo-title">CareBridge NGO</h3><span class="badge">Active</span></div>
+              <p class="desc">Needs clothes and school supplies.</p>
+              <div class="row-between"><span class="desc">Need: Clothes + School</span><a class="mini-btn nav" data-to="donation-builder">Donate</a></div>
+            </div>
+            <div class="split">
+              <a class="btn btn-green nav" data-to="donation-builder">Plan Donation</a>
+              <a class="btn btn-yellow nav" data-to="donation-history">Donation History</a>
+            </div>
+            <div class="bottom-nav">
+              <a class="nav-item active nav" data-to="donor-dashboard"><span class="nav-dot">⌂</span><span>Home</span></a>
+              <a class="nav-item nav" data-to="donation-history"><span class="nav-dot">♥</span><span>Donations</span></a>
+              <a class="nav-item nav" data-to="donor-profile"><span class="nav-dot">◉</span><span>Profile</span></a>
+            </div>
+          </section>
+
+          <section class="screen" id="donation-builder">
+            <div class="top-nav"><div class="name" style="color:#1f2937">Plan Your Donation</div><a class="icon nav" data-to="donor-dashboard">↩</a></div>
+            <div class="card">
+              <strong style="font-size:12px">Choose NGO</strong>
+              <div class="field" style="margin-top:8px"><select class="select-input"><option>Hope Harbor Foundation</option><option>CareBridge NGO</option><option>GreenEarth Relief</option><option>Hands of Care Network</option><option>Unity Outreach Alliance</option></select></div>
+            </div>
+            <div class="card">
+              <strong style="font-size:12px">Categories and Quantity</strong>
+              <div class="split" style="margin-top:8px">
+                <div class="field"><select class="select-input"><option>Food Packs</option><option>Clothes</option><option>Medical Supplies</option><option>Hygiene Kits</option><option>School Supplies</option><option>Baby Essentials</option></select></div>
+                <div class="field"><input class="field-input" type="number" min="1" placeholder="Qty" /></div>
+              </div>
+              <div class="split" style="margin-top:8px">
+                <div class="field"><select class="select-input"><option>Medical Supplies</option><option>Food Packs</option><option>Clothes</option></select></div>
+                <div class="field"><input class="field-input" type="number" min="1" placeholder="Qty" /></div>
+              </div>
+            </div>
+            <div class="split">
+              <a class="btn btn-yellow nav" data-to="donor-dashboard">Save Draft</a>
+              <a class="btn btn-green nav" data-to="donation-history">Submit Donation</a>
+            </div>
+            <div class="bottom-nav">
+              <a class="nav-item nav" data-to="donor-dashboard"><span class="nav-dot">⌂</span><span>Home</span></a>
+              <a class="nav-item active nav" data-to="donation-history"><span class="nav-dot">♥</span><span>Donations</span></a>
+              <a class="nav-item nav" data-to="donor-profile"><span class="nav-dot">◉</span><span>Profile</span></a>
+            </div>
+          </section>
+
+          <section class="screen" id="donation-history">
+            <div class="top-nav"><div class="name" style="color:#1f2937">Donation History</div><a class="icon nav" data-to="donor-dashboard">↩</a></div>
+            <div class="card"><div class="row-between"><strong style="font-size:12px">Total Donations</strong><span class="badge">18 Records</span></div><p class="desc">Recipient, item category, and quantity per donation.</p></div>
+            <div class="card"><div class="row-between"><strong style="font-size:11px">Hope Harbor Foundation</strong><span class="badge">Delivered</span></div><p class="desc">Food Packs x25, Hygiene Kits x12</p></div>
+            <div class="card"><div class="row-between"><strong style="font-size:11px">CareBridge NGO</strong><span class="badge">In Transit</span></div><p class="desc">Clothes x15, School Supplies x20</p></div>
+            <div class="card"><div class="row-between"><strong style="font-size:11px">GreenEarth Relief</strong><span class="badge">Pending</span></div><p class="desc">Medical Supplies x10, Baby Essentials x8</p></div>
+            <div class="bottom-nav">
+              <a class="nav-item nav" data-to="donor-dashboard"><span class="nav-dot">⌂</span><span>Home</span></a>
+              <a class="nav-item active nav" data-to="donation-history"><span class="nav-dot">♥</span><span>Donations</span></a>
+              <a class="nav-item nav" data-to="donor-profile"><span class="nav-dot">◉</span><span>Profile</span></a>
+            </div>
+          </section>
+
+          <section class="screen" id="donor-profile">
+            <div class="top-nav"><div class="name" style="color:#1f2937">Donor Profile</div><a class="icon nav logout" data-to="login">⎋</a></div>
+            <div class="card"><div class="row-between"><strong style="font-size:13px">Jane Donor</strong><span class="badge">Verified</span></div><p class="desc">jane@email.com</p><p class="desc">Total Donations: 18 • Active: 2</p></div>
+            <a class="btn btn-yellow nav" data-to="donation-history">My Donations</a>
+            <a class="btn btn-green nav" data-to="donor-dashboard">Back Home</a>
+            <div class="bottom-nav">
+              <a class="nav-item nav" data-to="donor-dashboard"><span class="nav-dot">⌂</span><span>Home</span></a>
+              <a class="nav-item nav" data-to="donation-history"><span class="nav-dot">♥</span><span>Donations</span></a>
+              <a class="nav-item active nav" data-to="donor-profile"><span class="nav-dot">◉</span><span>Profile</span></a>
+            </div>
+          </section>
+
+          <section class="screen" id="ngo-inventory">
+            <div class="top-nav"><div class="name" style="color:#1f2937">NGO Inventory</div><a class="icon nav" data-to="ngo-donor-tracker">📊</a></div>
+            <div class="card">
+              <div class="item-row"><div class="item-icon">🍚</div><div><div class="item-name">Food Packs</div><div class="progress"><div class="fill" style="width:42%"></div></div></div><span class="badge">Low</span></div>
+              <div class="item-row"><div class="item-icon">👕</div><div><div class="item-name">Clothes</div><div class="progress"><div class="fill" style="width:63%"></div></div></div><span class="badge">Med</span></div>
+              <div class="item-row" style="margin-bottom:0"><div class="item-icon">🩺</div><div><div class="item-name">Medical Supplies</div><div class="progress"><div class="fill" style="width:31%"></div></div></div><span class="badge">Low</span></div>
+            </div>
+            <a class="btn btn-yellow nav" data-to="ngo-donor-tracker">View Donor Requests</a>
+            <a class="btn btn-green nav" data-to="ngo-profile">Update Inventory</a>
+            <div class="bottom-nav">
+              <a class="nav-item active nav" data-to="ngo-inventory"><span class="nav-dot">⌂</span><span>Home</span></a>
+              <a class="nav-item nav" data-to="ngo-donor-tracker"><span class="nav-dot">☰</span><span>Donors</span></a>
+              <a class="nav-item nav" data-to="ngo-profile"><span class="nav-dot">◉</span><span>Profile</span></a>
+            </div>
+          </section>
+
+          <section class="screen" id="ngo-donor-tracker">
+            <div class="top-nav"><div class="name" style="color:#1f2937">Donor Requests</div><a class="icon nav" data-to="ngo-inventory">↩</a></div>
+            <div class="card"><div class="row-between"><strong style="font-size:12px">Incoming Donations</strong><span class="badge">12 Active</span></div><p class="desc">Donor, pledged items, quantity, and status.</p></div>
+            <div class="card"><div class="row-between"><strong style="font-size:11px">Jane Donor</strong><span class="badge">In Transit</span></div><p class="desc">Food Packs x25, Hygiene Kits x12</p></div>
+            <div class="card"><div class="row-between"><strong style="font-size:11px">Alex Rivera</strong><span class="badge">Pending</span></div><p class="desc">Medical Supplies x10, Baby Essentials x8</p></div>
+            <div class="card"><div class="row-between"><strong style="font-size:11px">Mia Santos</strong><span class="badge">Delivered</span></div><p class="desc">School Supplies x20, Clothes x15</p></div>
+            <div class="bottom-nav">
+              <a class="nav-item nav" data-to="ngo-inventory"><span class="nav-dot">⌂</span><span>Home</span></a>
+              <a class="nav-item active nav" data-to="ngo-donor-tracker"><span class="nav-dot">☰</span><span>Donors</span></a>
+              <a class="nav-item nav" data-to="ngo-profile"><span class="nav-dot">◉</span><span>Profile</span></a>
+            </div>
+          </section>
+
+          <section class="screen" id="ngo-profile">
+            <div class="top-nav"><div class="name" style="color:#1f2937">NGO Profile</div><a class="icon nav logout" data-to="login">⎋</a></div>
+            <div class="card"><strong style="font-size:13px">Hope Harbor Foundation</strong><p class="desc">Manila, PH • 7 active campaigns</p></div>
+            <a class="btn btn-green nav" data-to="ngo-inventory">Inventory</a>
+            <a class="btn btn-yellow nav" data-to="ngo-donor-tracker">Donor Requests</a>
+            <div class="bottom-nav">
+              <a class="nav-item nav" data-to="ngo-inventory"><span class="nav-dot">⌂</span><span>Home</span></a>
+              <a class="nav-item nav" data-to="ngo-donor-tracker"><span class="nav-dot">☰</span><span>Donors</span></a>
+              <a class="nav-item active nav" data-to="ngo-profile"><span class="nav-dot">◉</span><span>Profile</span></a>
+            </div>
+          </section>
+        </div>
+      </div>
+      <p class="hint">All pages except Login/Sign Up are protected by sign-in state.</p>
+    </section>
+  </main>
+
+  <script>
+    const screens = [...document.querySelectorAll(".screen")];
+    const roleToggles = [...document.querySelectorAll(".role-toggle")];
+    const roleNote = document.getElementById("role-note");
+    const loginSubmit = document.getElementById("login-submit");
+    const createDonorAccount = document.getElementById("create-donor-account");
+    const createNgoAccount = document.getElementById("create-ngo-account");
+    let selectedRole = "donor";
+    let isAuthenticated = false;
+    const publicScreens = new Set(["login", "signup"]);
+
+    function setRole(role) {
+      selectedRole = role;
+      roleToggles.forEach((t) => t.classList.toggle("active-role", t.dataset.role === role));
+      roleNote.textContent = `Selected role: ${role === "ngo" ? "NGO" : "Donor"}`;
+    }
+
+    function showScreen(id) {
+      if (!isAuthenticated && !publicScreens.has(id)) id = "login";
+      const target = document.getElementById(id);
+      if (!target) return;
+      screens.forEach((s) => s.classList.toggle("active", s === target));
+    }
+
+    document.querySelectorAll(".nav").forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (item.classList.contains("logout")) {
+          isAuthenticated = false;
+          setRole("donor");
+        }
+        showScreen(item.dataset.to);
+      });
+    });
+
+    roleToggles.forEach((toggle) => {
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        setRole(toggle.dataset.role);
+      });
+    });
+
+    loginSubmit.addEventListener("click", (e) => {
+      e.preventDefault();
+      isAuthenticated = true;
+      showScreen(selectedRole === "ngo" ? "ngo-inventory" : "donor-dashboard");
+    });
+
+    createDonorAccount.addEventListener("click", (e) => {
+      e.preventDefault();
+      isAuthenticated = true;
+      setRole("donor");
+      showScreen("donor-dashboard");
+    });
+
+    createNgoAccount.addEventListener("click", (e) => {
+      e.preventDefault();
+      isAuthenticated = true;
+      setRole("ngo");
+      showScreen("ngo-inventory");
+    });
+
+    setRole("donor");
+  </script>
+</body>
+</html>
